@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: leejaeyoung
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/leejaeyoung
+    username: root
+    password: root
+
+  graphql:
+    graphiql:
+      enabled: true
+
+logging:
+  level:
+    org.springframework: DEBUG
+    org.springframework.data: DEBUG
+    org.springframework.boot.autoconfigure.logging: ERROR
+    org.springframework.graphql: DEBUG
+    org.springframework.graphql.execution: DEBUG
+    org.hibernate: ERROR
+    org.hibernate.type.descriptor.sql: ERROR
