@@ -1,0 +1,53 @@
+type Query {
+    findAll: [ArticleResponse]
+    findById(id: ID): ArticleResponse
+    search( request: SearchDto = { findArticle: { size: 10, sort: { by: createdAt, direction: desc } } } ): [ArticleResponse]
+}
+
+type Mutation {
+    create(request: CreateDto): ID!
+    delete(id: ID): ID
+}
+
+type ArticleResponse {
+    id: ID!
+    title: String!
+    content: String!
+    createdAt: String!
+}
+
+input CreateDto {
+    title: String!
+    content: String!
+}
+
+input SearchDto {
+    text: String = ""
+    findArticle: FindArticle
+}
+
+input FindArticle {
+    size: Int = 10
+    sort: Sort = { by: createdAt, direction: desc }
+}
+
+input Sort {
+    by: SortBy = createdAt
+    direction: SortDirection = desc
+}
+
+enum SortBy {
+    createdAt
+    updatedAt
+    title
+    id
+}
+
+enum SortDirection {
+    asc
+    desc
+}
+
+scalar BigDecimal
+scalar Date
+scalar DateTime
