@@ -13,7 +13,7 @@ type ArticleResponse {
     id: ID!
     title: String!
     content: String!
-    createdAt: DateTime!
+    createdAt: Date!
 }
 
 input CreateDto {
@@ -48,6 +48,4 @@ enum SortDirection {
     desc
 }
 
-scalar BigDecimal
 scalar Date
-scalar DateTime

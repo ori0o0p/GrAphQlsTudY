@@ -16,9 +16,7 @@ public class LeejaeyoungApplication {
     @Bean
     public RuntimeWiringConfigurer runtimeWiringConfigurer() {
         return wiringBuilder -> wiringBuilder
-                .scalar(ExtendedScalars.GraphQLBigDecimal)
-                .scalar(ExtendedScalars.Date)
-                .scalar(ExtendedScalars.DateTime);
+                .scalar(ExtendedScalars.Date);
     }
 
 }
